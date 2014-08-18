@@ -7,29 +7,38 @@
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="{{language}}" class="no-js"> <!--<![endif]-->
 <head>
-  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+  <!-- document meta (compat, etc...) -->
   <meta charset="utf-8">
-  <link href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--[if IE]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
 
-  <title>Webmaker Training: Teach the Web {% if current_course %} | {{site.data.course[current_course].title}}{% endif %}{% if page.title %} | {{ page.title | strip_html }}{% endif %}</title>
+  <!-- document meta (seo) -->
   <meta name="description" content="Learning for everyone, by everyone, about almost anything.">
   <meta name="author" content="p2pu">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
   <link rel="icon" type="image/png" href="{{site.baseurl}}/img/favicon.ico">
 
+  <!-- thirdparty styles -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" rel="stylesheet">
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" rel="stylesheet" />
+
+  <!-- site styles -->
   <link href="{{site.baseurl}}/css/makerstrap.min.css" rel="stylesheet">
   <link href="{{site.baseurl}}/css/site.css" rel="stylesheet">
   <link href="{{site.baseurl}}/css/syntax.css" rel="stylesheet">
-  <!--link href="{{site.baseurl}}/css/landing.css" rel="stylesheet"-->
+
   {% if page.landing-style %}
-    <link href="{{site.baseurl}}/css/{{page.landing-style}}.landing.css" rel="stylesheet">
+  <!-- page styles -->
+  <link href="{{site.baseurl}}/css/{{page.landing-style}}.landing.css" rel="stylesheet">
   {% endif %}
 
+  <!-- head scripts -->
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+  <!-- page title -->
+  <title>Webmaker Training: Teach the Web {% if current_course %} | {{site.data.course[current_course].title}}{% endif %}{% if page.title %} | {{ page.title | strip_html }}{% endif %}</title>
 </head>
 <body {% if page.itemtype %}itemscope itemtype="{{page.itemtype}}"{% endif %}>
   {{ content }}
@@ -37,10 +46,11 @@
   {% assign footer = 'footer-' | append:language | append:'.html' }} %}
   {% include {{footer}} %}
 
+  <!-- thirdparty scripts -->
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-  <!-- Nav Collapse -->
+  <!-- site scripts -->
   <script>
     // Collapse
     $('[nav-toggle]').click(function (e) {
@@ -56,6 +66,5 @@
   {% if site.ga_tracking_code %}
     {% include ga.html %}
   {% endif %}
-
 </body>
 </html>

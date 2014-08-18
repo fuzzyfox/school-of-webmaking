@@ -16,9 +16,11 @@ layout: default
     <ul class="nav navbar-nav bignav">
       {% assign course_category = page.categories[0] %}
       {% assign course=site.data.course[course_category] %}
+
       {% for subpage in site.categories[course.category] reversed %}
       <li class="{% if subpage.title == page.title %}active{% endif %}" > <a href="{{site.baseurl}}{{ subpage.url }}">{{subpage.title}}</a></li>
       {% endfor %}
+
       {% if course.category %}
       <li><a href="http://discourse.webmakerprototypes.org/category/training/{{course.category}}"><i class="fa fa-comments"></i> Discussion</a></li>
       {% endif %}
